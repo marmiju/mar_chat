@@ -12,7 +12,10 @@ const page = () => {
         password: ''
     })
 
+    // ? authentication
+
     const authenticated = localStorage.getItem('userinfo')
+
     if (authenticated) {
         redirect('/chat')
     }
@@ -22,6 +25,7 @@ const page = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         islogin ? LogIn(formData) : SignUp(formData);
+        redirect('/chat')
     }
 
     // ! handle chenge
@@ -51,7 +55,6 @@ const page = () => {
                 }
                 <button className='text-center border w-full py-1.5 rounded bg-black text-white cursor-pointer' type='submit'>{islogin ? 'LogIn and start' : 'Register'}</button>
             </form>
-
         </div>
     );
 };

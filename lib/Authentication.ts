@@ -26,3 +26,4 @@ export const SignUp = async ({ email, password, username }: { email: string, pas
     const result = await response.json()
     alert(result.message)
 }
+

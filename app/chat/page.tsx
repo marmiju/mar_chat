@@ -1,5 +1,7 @@
+''
 import React from 'react';
 import Sidebar from '../components/sidebar/sideBar';
+
 
 const app = () => {
     return (
@@ -13,7 +15,6 @@ const app = () => {
             <div className='col-span-1 border'>
                 members
             </div>
-
 
         </div>
     );
