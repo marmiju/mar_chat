@@ -10,7 +10,7 @@ const CreateGroupButton = () => {
 
     console.log(authenticated)
     return (
-        <button><FaPlus /></button>
+        <button><FaPlus/></button>
     );
 };
 

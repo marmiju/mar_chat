@@ -16,10 +16,11 @@ const InputBox = ({ label, type, onChange, isRequired = false, value,name }: inp
             <input
                 required={isRequired}
                 name={name}
-                className='focus:border-none border rounded p-2'
+                className=' border rounded p-2 '
                 type={type}
                 onChange={onChange}
             />
+
         </div>
     );
 };

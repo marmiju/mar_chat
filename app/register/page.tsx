@@ -29,13 +29,13 @@ export default function LoginPage() {
       <form  onSubmit={handleLogin} className="space-y-4 p-6 max-w-96 mx-auto border border-gray-200 shadow  shadow-blue-200  ">
       <h1 className="text-4xl font-bold">LogIn</h1>
         <input
-          type="email"
+          type="text"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="border px-4 py-2 w-full"
         />
-      <input
+        <input
           type="password"
           placeholder="Password"
           value={password}

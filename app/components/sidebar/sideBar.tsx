@@ -1,16 +1,26 @@
 import React from 'react';
-import { FaDAndD, FaPlus } from 'react-icons/fa';
-import CreateGroupIcon from '../button/creategroupbtn';
-import CreateGroupButton from '../button/creategroupbtn';
-import LogOut from '../button/LogOut';
 
-const Sidebar = () => {
-    return (
-        <div className='flex flex-col justify-between min-h-screen'>
-           <CreateGroupButton key={'create group'}/>
-        <LogOut/>
-        </div>
-    );
+// import { GetGroups } from '../../../lib/groups/GroupHAndler';
+
+const Sidebar = ({ onGroupClick }: { onGroupClick: () => void }) => {
+  return (
+    <div className="p-4 space-y-2">
+      <h2 className="text-xl font-bold mb-4">Groups</h2>
+      <button
+        onClick={onGroupClick}
+        className="block w-full text-left py-2 px-4 bg-gray-100 rounded hover:bg-gray-200"
+      >
+        Group 1
+      </button>
+      <button
+        onClick={onGroupClick}
+        className="block w-full text-left py-2 px-4 bg-gray-100 rounded hover:bg-gray-200"
+      >
+        Group 2
+      </button>
+    </div>
+  );
 };
+
 
 export default Sidebar;

@@ -1,23 +1,19 @@
-''
+import { getServerSession } from 'next-auth';
 import React from 'react';
-import Sidebar from '../components/sidebar/sideBar';
+import { authOptions } from '../api/auth/[...nextauth]/route';
 
+const page = async () => {
+    const session =await getServerSession(authOptions)
+    console.log(session?.user.token)
 
-const app = () => {
     return (
-        <div className='max-w-[90%] mx-auto grid grid-cols-8 '>
-            <div className='col-span-2 border'>
-                <Sidebar />
-            </div>
-            <div className='flex flex-wrap col-span-5 border'>
-                chat section
-            </div>
-            <div className='col-span-1 border'>
-                members
-            </div>
-
+        <div>
+            <p>{`welcome ${session?.user?.name}`}</p>
+            <p>{`welcome ${session?.user?.email}`}</p>
+            <p>{`admin ${session?.user?.isAdmin ? 'admin' : 'client'}`}</p>
+            <p>{`admin ${session?.user?.token}`}</p>
         </div>
     );
 };
 
-export default app;
+export default page;
